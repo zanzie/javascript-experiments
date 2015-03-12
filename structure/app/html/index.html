@@ -15,6 +15,26 @@ $(document).ready(function(){
         $("#div4").fadeIn(Math.random()*3000);
         $("#div5").fadeIn(Math.random()*3000);
         $("#div6").fadeIn(Math.random()*3000);
+        var colors = ["red", "blue", "yellow", "black", "green"];
+
+$(window).scroll(function () {
+     if ($(document).scrollTop() == 0) 
+     {
+        //if scrollbar is at the top (doing nothing atm)
+     } 
+     else if($( "#header_nav" ).hasClass( "colorSet" ))
+     {
+        //if the colorSet class has been apended (remove this, if you want some fun :))
+     }
+     else
+     {
+        //first, add the class, so we know we do not have to walk tru this anymore.
+        $('#header_nav').addClass('colorSet');
+
+        // Apend a CSS background-color based on a rand function on our color array
+        $('#header_nav').css( "background-color", colors[Math.floor(Math.random() * colors.length)] );
+     }
+});
     });
 });
 </script>
